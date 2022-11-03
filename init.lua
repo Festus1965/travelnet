@@ -142,7 +142,7 @@ travelnet.allow_travel = function( player_name, owner_name, network_name, statio
 	end
 
 	-- protected target with "(P) name"
-	if station_name_target and string.sub(station_name_target, 1, 3) == "(P)" then
+--	if station_name_target and string.sub(station_name_target, 1, 3) == "(P)" then
 		if travelnet.targets[owner_name] and travelnet.targets[owner_name][network_name] and
 				travelnet.targets[owner_name][network_name][station_name_target] then
 
@@ -152,7 +152,7 @@ travelnet.allow_travel = function( player_name, owner_name, network_name, statio
 				return false
 			end
 		end
-	end
+--	end
 
 	-- check if player can teleport there
 	local player = minetest.get_player_by_name(player_name)
