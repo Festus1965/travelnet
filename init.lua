@@ -151,7 +151,19 @@ travelnet.allow_travel = function( player_name, owner_name, network_name, statio
 				minetest.chat_send_player(player_name, "This station is protected!")
 				return false
 			end
-		end
+			
+			-- try also to false the not protected travelnet = only owner can use
+			if travelnet.targets[owner_name] not player_name then
+				minetest.chat_send_player(player_name, "This station is not yours!")
+				return false
+			end
+		
+			-- may have to look for an "owner' only for open nets
+--			if travelnet.targets[owner_name] is "" then
+--				return true
+--			end
+
+end
 --	end
 
 	-- check if player can teleport there
